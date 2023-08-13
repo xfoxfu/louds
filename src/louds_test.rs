@@ -10,7 +10,7 @@ macro_rules! parameterized_tests {
             $(
                 #[test]
                 fn $name() {
-                    let louds = Louds::from_str($tree);
+                    let louds = dbg!(Louds::from_str($tree));
                     let index = louds.$fn($arg);
                     pretty_assertions::assert_eq!($expect, index);
                 }
